@@ -123,6 +123,7 @@ select:-ms-expand { display: none; }
 .side ul li{text-align: center;line-height: 20px;background: #1299e1;margin-top:15px;border-radius: 5px;}
 .side ul li{*zoom:1; *display:inline;float:none;}
 .side ul li img{margin-top: 10px;}
+.current{width: 500px;height: 200px;background:red;}
 
 
 
