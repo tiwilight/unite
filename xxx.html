@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style type="text/css">
+   body{font-size:12px;}
+   ul{margin:0;padding:0;border:1px solid #ccc;height:100px;overflow:auto;display:none;}
+   ul li{display:block;padding:3px 15px;color:#999;cursor:pointer;}
+   ul li:hover{background:#f00;color:#fff;}
+   .cp{cursor:pointer;}
+   .f14{font-size:14px;font-weight:bold;}
+   .f{color:#fff;}
+   .scltDiv{width:137px;overflow:hidden;}
+   #slct{display:block;border:1px solid #ccc;line-height:19px;} 
+   .blk{display:inline-block;width:22px;height:22px;background:#ccc;text-align:center;vertical-align: middle;margin-left:5px;}
+   .triangle{display:inline-block;border:5px solid #ccc;border-top:8px solid #666;margin-top:7px;}
+   .select{position:absolute;top:5px;left:200px;width:140px;height:26px;}
+  </style>
+</head>
+<body id="body">
+  
+  <div class="scltDiv">
+    <span id="slct" class="cp" val=''>您希望您的酒店位于？
+      <span class="blk">
+        <span class="triangle"></span>
+      </span>
+    </span>
+    <ul id="list">
+      <li val='1'>黄埔区</li>
+      <li val='1'>杨埔区</li>
+      <li>静安区</li>
+      <li>静安区</li>
+      <li>静安区</li>
+      <li>静安区</li>
+    </ul>
+  </div>
+  <script type="text/javascript">
+     var $=function(id){ return document.getElementByIdx_x_x(id);}
+  function onLoad(){
+//select点击事件,阻止事件向document冒泡
+   $("slct").onclick=function(e){
+  $("list").style.display="block";
+   if (e.stopPropagation){ 
+e.stopPropagation(); 
+} else {
+ e.cancelBubble = true;  
+} 
+};
+ //在弹出层以外点击，隐藏弹出层
+document.onclick=function(){
+   $("list").style.display="none";  
+}
+ //获取选项
+  var len=document.getElementsByTagName_r("li").length;
+  var i=0;
+  while(i
+     document.getElementsByTagName_r("li")[i].onclick=function(){
+    $("slct").style.lineHeight="22px";
+     $("slct").style.textIndent="1em";
+    $("slct").innerText=this.innerText;
+    $("slct").setAttribute("val",this.getAttribute("val"));
+    alert($("slct").attributes["val"].nodeValue);
+ }
+i++;
+  }
+  }  
+ 
+  </script>
+</body>
+</html>
